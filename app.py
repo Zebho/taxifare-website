@@ -1,6 +1,5 @@
 import streamlit as st
 
-import numpy as np
 import pandas as pd
 
 import requests
@@ -67,16 +66,6 @@ st.write(response)
 
 ShowMap = st.checkbox('Show Map')
 
-@st.cache
-def get_map_data():
-
-    return pd.DataFrame(
-            [pickup_latitude ,pickup_longitude],
-            [dropoff_latitude,dropoff_longitude],
-            columns=['lat', 'lon']
-        )
-
-
 
 if st.button('click me'):
     latest_iteration = st.empty()
@@ -90,7 +79,7 @@ if st.button('click me'):
     st.write(f"Votre course vous coutera : {round(response['fare_amount'],2)} $ ")
 
     if ShowMap:
-        df = get_map_data()
-        st.map(df)
+
+        st.write('Une map iciiiiiiiii')
 else:
     pass
