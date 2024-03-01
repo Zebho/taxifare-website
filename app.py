@@ -29,7 +29,7 @@ st.markdown("""# Quelles sont tes informations ? """)
 
 d = st.date_input(
     "When's your pick up date",
-    datetime.date(2019, 7, 6))
+    datetime.datetime(2019, 7, 6,12,30,00))
 
 d = '2012-10-06 2012:10:20'
 
@@ -59,7 +59,7 @@ import requests
 
 response = requests.get(
     url,
-    params=dict_request,).json()
+    params=dict_request).json()
 
 print(response)
 st.write(response)
